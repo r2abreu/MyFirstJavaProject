@@ -2,7 +2,7 @@ package com.netmind.business;
 
 public class ArrayDemostrator {
 
-	public static void main(String[] args) {
+	public int reducer() {
 		int[] arr = new int[101];
 		
 		for (int index = 0; index <= 100; index++) {
@@ -17,8 +17,7 @@ public class ArrayDemostrator {
 			}
 		}
 		
-		System.out.println(reducedArray);
-
+		return reducedArray;
 	}
 
 }
