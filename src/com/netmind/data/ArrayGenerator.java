@@ -8,5 +8,7 @@ public class ArrayGenerator {
 		}
 		
 		return arr;
+		
+		// Check GitKraken local user config
 	}
 }
