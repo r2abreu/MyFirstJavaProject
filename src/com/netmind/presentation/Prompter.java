@@ -3,7 +3,7 @@ package com.netmind.presentation;
 import java.util.Scanner;
 
 import com.netmind.business.ArrayOperator;
-import com.netmind.data.ArrayGenerator;
+import com.netmind.excercises.ArrayGenerator;
 
 public class Prompter {
 	public static void main(String[] args) {

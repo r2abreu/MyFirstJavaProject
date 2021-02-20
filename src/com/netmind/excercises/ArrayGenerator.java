@@ -1,4 +1,4 @@
-package com.netmind.data;
+package com.netmind.excercises;
 
 public class ArrayGenerator {
 	public int[] generateNaturalSequenceArray(int size) {

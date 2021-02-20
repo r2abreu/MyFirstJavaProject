@@ -5,7 +5,7 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
 import com.netmind.business.ArrayOperator;
-import com.netmind.data.ArrayGenerator;
+import com.netmind.excercises.ArrayGenerator;
 
 public class ArrayOperatorIntegrationTest {
 
