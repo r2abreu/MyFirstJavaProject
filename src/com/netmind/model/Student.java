@@ -10,6 +10,8 @@ public class Student {
 	private Integer age;
 	private Date dateOfBirth;
 
+	// Getters and Setters
+
 	public Integer getIdStudent() {
 		return idStudent;
 	}
@@ -49,6 +51,8 @@ public class Student {
 	public void setDateOfBirth(Date dateOfBirth) {
 		this.dateOfBirth = dateOfBirth;
 	}
+
+	// CONSTRUCTOR
 
 	public Student(Integer idStudent, String name, String surname, Integer age,
 			Date dateOfBirth) {
