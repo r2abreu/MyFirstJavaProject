@@ -36,8 +36,9 @@ public class Principal {
 			break;
 		case "4":
 			System.out.println("Goodbye!");
-			scanner.close();
+
 		}
+		scanner.close();
 	}
 
 	public static void addNewStudent(Scanner scanner) throws Exception {
@@ -56,13 +57,14 @@ public class Principal {
 		System.out.println("Edad:");
 		Integer age = scanner.nextInt();
 
-		System.out.println("Fecha de Nacimiento: [yyyy-mm-dd]");
+		System.out.println("Fecha de Nacimiento: [dd-mm-yyyy]");
 		String dateInput = scanner.next();
-		Date dateOfBirth = new SimpleDateFormat("dd-mm-yyyy").parse(dateInput);
+		Date dateOfBirth = new SimpleDateFormat("dd-MM-yyyy").parse(dateInput);
 
 		Student student = new Student(idStudent, name, surname, age,
 				dateOfBirth);
 
+		System.out.println("Enhorabuena, has creado la siguiente entrada:");
 		System.out.println(student.toString());
 	}
 
