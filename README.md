@@ -1,6 +1,6 @@
 # My First Java Project
  
-![Screenshot](screenshot.png)
+[Screenshot](screenshot.png)
  
 ## Introduction
  
