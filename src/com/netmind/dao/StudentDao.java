@@ -1,13 +1,23 @@
 package com.netmind.dao;
 
+import java.util.ArrayList;
+
 import com.netmind.model.Student;
 
 public class StudentDao {
-	public boolean add(Student student) {
-		throw new UnsupportedOperationException(
-				"The file is not yet implemented");
+	private static ArrayList<Student> studentList;
 
-		// Crearemos un unico arrayList y agregamos el student
-		// en el array list (BBDD)
+	static {
+		studentList = new ArrayList<Student>();
+	}
+
+	public boolean add(Student student) {
+		studentList.add(student);
+		return true;
+	}
+
+	public boolean addStudentToFile(Student student) {
+		studentList.add(student);
+		return true;
 	}
 }
