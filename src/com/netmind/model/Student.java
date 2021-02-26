@@ -2,15 +2,13 @@ package com.netmind.model;
 
 import java.util.Date;
 
-public class Student {
+public class Student extends NetmindObject {
 
 	private Integer idStudent;
 	private String name;
 	private String surname;
 	private Integer age;
 	private Date dateOfBirth;
-
-	// Getters and Setters
 
 	public Integer getIdStudent() {
 		return idStudent;
@@ -52,8 +50,6 @@ public class Student {
 		this.dateOfBirth = dateOfBirth;
 	}
 
-	// CONSTRUCTOR
-
 	public Student(Integer idStudent, String name, String surname, Integer age,
 			Date dateOfBirth) {
 		super();
@@ -62,6 +58,10 @@ public class Student {
 		this.surname = surname;
 		this.age = age;
 		this.dateOfBirth = dateOfBirth;
+	}
+
+	public Student() {
+
 	}
 
 	@Override
