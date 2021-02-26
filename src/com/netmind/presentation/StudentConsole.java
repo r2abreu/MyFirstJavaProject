@@ -19,9 +19,11 @@ import com.netmind.model.Student;
 
 public class StudentConsole {
 
+	@SuppressWarnings("static-access")
 	public static void selectOperation() {
 		Scanner scanner = new Scanner(System.in);
 		StudentBl studentBl = new StudentBl();
+		OptionEnum option;
 
 		int input;
 
@@ -29,7 +31,7 @@ public class StudentConsole {
 
 			showPrincipalMenu();
 			input = scanner.nextInt();
-			OptionEnum option = OptionEnum.getOption(input);
+			option = OptionEnum.getEnumFromValue(input);
 
 			switch (option) {
 			case ADD_STUDENT:
@@ -37,8 +39,10 @@ public class StudentConsole {
 				fillStudentProperties(student, scanner);
 				studentBl.add(student);
 				break;
+			default:
+				break;
 			}
-		} while (input != 3);
+		} while (input != option.EXIT.getValue());
 
 		scanner.close();
 	}
@@ -50,7 +54,6 @@ public class StudentConsole {
 		System.out.println("2. Calcular el estudiante con mayor edad.");
 		System.out.println(
 				"3. Calcular la media de edad de todos los estudiantes");
-		System.out.println("4. Salir");
 	}
 
 	public static void fillStudentProperties(Student student, Scanner scanner) {
