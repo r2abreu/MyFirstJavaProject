@@ -9,8 +9,6 @@
 
 package com.netmind.presentation;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.Scanner;
 
 import com.netmind.business.StudentBl;
@@ -68,13 +66,6 @@ public class StudentConsole {
 		student.setSurname(scanner.next());
 
 		System.out.println("Fecha de Nacimiento: [dd-mm-yyyy]");
-
-		try {
-			student.setDateOfBirth(
-					new SimpleDateFormat("dd-MM-yyyy").parse(scanner.next()));
-		} catch (ParseException e) {
-			e.printStackTrace();
-		}
 
 	}
 

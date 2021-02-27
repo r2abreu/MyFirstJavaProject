@@ -27,4 +27,8 @@ public class FileManagerDao {
 		return isFileCreated;
 	}
 
+	public static String getFileName() {
+		return file.getName();
+	}
+
 }
