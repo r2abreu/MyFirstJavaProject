@@ -1,6 +1,7 @@
 package com.netmind.model;
 
-import java.util.Date;
+import java.time.LocalDate;
+import java.util.UUID;
 
 public class Student extends NetmindObject {
 
@@ -8,7 +9,7 @@ public class Student extends NetmindObject {
 	private String name;
 	private String surname;
 	private Integer age;
-	private Date dateOfBirth;
+	private LocalDate dateOfBirth;
 
 	public Integer getIdStudent() {
 		return idStudent;
@@ -42,16 +43,20 @@ public class Student extends NetmindObject {
 		this.age = age;
 	}
 
-	public Date getDateOfBirth() {
+	public LocalDate getDateOfBirth() {
 		return dateOfBirth;
 	}
 
-	public void setDateOfBirth(Date dateOfBirth) {
+	public void setDateOfBirth(LocalDate dateOfBirth) {
 		this.dateOfBirth = dateOfBirth;
 	}
 
+	public Student(UUID uuid) {
+		super(uuid);
+	}
+
 	public Student(Integer idStudent, String name, String surname, Integer age,
-			Date dateOfBirth) {
+			LocalDate dateOfBirth) {
 		super();
 		this.idStudent = idStudent;
 		this.name = name;
@@ -61,7 +66,6 @@ public class Student extends NetmindObject {
 	}
 
 	public Student() {
-
 	}
 
 	@Override
@@ -81,10 +85,26 @@ public class Student extends NetmindObject {
 		return builder.toString();
 	}
 
+	public String toTxtFile() {
+		StringBuilder builder = new StringBuilder();
+		builder.append(super.getUUId().toString());
+		builder.append(",");
+		builder.append(idStudent);
+		builder.append(",");
+		builder.append(name);
+		builder.append(",");
+		builder.append(surname);
+		builder.append(",");
+		builder.append(age);
+		builder.append(",");
+		builder.append(dateOfBirth);
+		return builder.toString();
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
-		int result = 1;
+		int result = super.hashCode();
 		result = prime * result + ((age == null) ? 0 : age.hashCode());
 		result = prime * result
 				+ ((dateOfBirth == null) ? 0 : dateOfBirth.hashCode());
@@ -99,7 +119,7 @@ public class Student extends NetmindObject {
 	public boolean equals(Object obj) {
 		if (this == obj)
 			return true;
-		if (obj == null)
+		if (!super.equals(obj))
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
