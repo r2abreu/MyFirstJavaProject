@@ -1,6 +1,7 @@
 package com.netmind.model;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.UUID;
 
 public class Student extends NetmindObject {
@@ -97,7 +98,8 @@ public class Student extends NetmindObject {
 		builder.append(",");
 		builder.append(age);
 		builder.append(",");
-		builder.append(dateOfBirth);
+		builder.append(
+				dateOfBirth.format(DateTimeFormatter.ofPattern("dd-MM-yyyy")));
 		return builder.toString();
 	}
 

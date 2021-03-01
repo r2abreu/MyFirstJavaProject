@@ -36,3 +36,7 @@ bin/
 build/
 /bin1/
 java/build/**
+
+# Text files 
+
+*.txt
