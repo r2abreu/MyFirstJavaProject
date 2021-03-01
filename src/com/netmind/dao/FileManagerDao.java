@@ -13,9 +13,7 @@ public class FileManagerDao {
 		boolean isFileCreated = false;
 		file = new File(fileName);
 
-		if (file.exists()) {
-			System.out.println("El fichero ya existe");
-		} else {
+		if (!file.exists()) {
 			try {
 				isFileCreated = file.createNewFile();
 			} catch (IOException e) {

@@ -9,6 +9,7 @@
 
 package com.netmind.presentation;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 import com.netmind.business.StudentBl;
@@ -28,15 +29,22 @@ public class StudentConsole {
 		do {
 
 			showPrincipalMenu();
-			input = scanner.nextInt();
+			input = Integer.parseInt(scanner.nextLine());
 			option = OptionEnum.getEnumFromValue(input);
 
 			switch (option) {
 			case ADD_STUDENT:
 				Student student = new Student();
 				fillStudentProperties(student, scanner);
-				studentBl.add(student);
+				try {
+					studentBl.add(student);
+				} catch (IOException e) {
+					System.out.println(e.getMessage());
+					e.printStackTrace();
+				}
 				break;
+			case EXIT:
+				System.out.println("So long!");
 			default:
 				break;
 			}
@@ -60,13 +68,17 @@ public class StudentConsole {
 		System.out.println("Introduce los siguientes datos");
 
 		System.out.println("Nombre:");
-		student.setName(scanner.next());
+		student.setName(scanner.nextLine());
 
 		System.out.println("Apellido:");
-		student.setSurname(scanner.next());
+		student.setSurname(scanner.nextLine());
 
 		System.out.println("Fecha de Nacimiento: [dd-mm-yyyy]");
-
+		/*
+		 * try { // student.setDateOfBirth(new SimpleDateFormat("dd/MM/yyyy") //
+		 * .parse(scanner.nextLine())); } catch (ParseException e) { // TODO
+		 * Auto-generated catch block e.printStackTrace(); }
+		 */
 	}
 
 }
